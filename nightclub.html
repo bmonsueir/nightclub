@@ -1,0 +1,36 @@
+<head>
+  <title>nightclub</title>
+</head>
+
+<body>
+  <div class = "text-center">
+  <h1>Welcome to the Night!</h1>
+  <h3>here we go</h3>
+  </div>
+  <div class = "well">
+    {{> night}}
+  </div>
+
+</body>
+
+<template name="night">
+  {{#with bars}}
+    {{#each bars}}
+
+    <div class ='club'>
+      <div class = 'row top-line'>
+      {{club}}<span>{{description}} {{cost}} {{rating}}</span>
+      </div>
+       <div class = 'next-line'>
+      <img src = '{{picture}}'/>
+        {{#each username}}
+        <div class = 'text-center'>{{this}}</div>
+        {{/each}}
+      </div>
+    </div>
+
+
+    {{/each}}
+  {{/with}}
+
+</template>
