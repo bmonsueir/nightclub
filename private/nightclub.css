@@ -1,0 +1,39 @@
+/* CSS declarations go here */
+h1 {
+	font-family: Georgia, Times, 'Times New Roman', serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+h3 {
+	font-family: Georgia, Times, 'Times New Roman', serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 15.4px;
+}
+img{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #FF0000;
+}
+.club{
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 20px;
+    color: #000000;
+    border-color: #FF0000;
+    margin: 20px;
+}
+.icon-des{
+    margin: 5px;
+
+}
+
+.attendees{
+		margin: 5px;
+	
+}

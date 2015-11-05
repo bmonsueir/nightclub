@@ -4,33 +4,49 @@
 
 <body>
   <div class = "text-center">
-  <h1>Welcome to the Night!</h1>
-  <h3>here we go</h3>
+    {{> nightclub}}
   </div>
-  <div class = "well">
+  <div class = "text-center">
+    {{#if currentUser}}
     {{> night}}
+    {{else}}
+    {{> login}}
+    {{> signup}}
+    {{/if}}
   </div>
 
 </body>
 
 <template name="night">
+  {{#if currentUser}}
+  <button class = 'logout btn btn-danger'>logout</button>
+  {{/if}}
   {{#with bars}}
     {{#each bars}}
+  <div class = 'container-fluid club'>
+    <div class="row">
+        <div class = 'col-xs-7'>
+          <p class = 'club-name'>{{club}} {{rating}}</p>
+        <button class = "addClub" id = {{@index}}>  <img src = '{{picture}}'/></button>
+        <p class = 'description'>"{{description}}"</p>
+        <p class = 'address'>{{address}}, {{city}}</p>
+        </div>
+        <div class = 'col-xs-5'>
+        <h1>Attendees</h1>
 
-    <div class ='club'>
-      <div class = 'row top-line'>
-      {{club}}<span>{{description}} {{cost}} {{rating}}</span>
-      </div>
-       <div class = 'next-line'>
-      <img src = '{{picture}}'/>
-        {{#each username}}
-        <div class = 'text-center'>{{this}}</div>
+        {{#each clubber}}
+        <p class = 'clubber'>{{this}}</p>
         {{/each}}
       </div>
     </div>
-
-
+  </div>
     {{/each}}
-  {{/with}}
+    {{/with}}
 
+</template>
+<template name = "nightclub">
+
+  <h1>Welcome to the Night!</h1>
+  <input type = "text" name = "location" placeholder = "enter city or allow to find"><button class = "btn btn-info getLocation">Find Clubs</button>
+  <h3>click on picture to add or remove yourself from attendees</h3>
 </template>
