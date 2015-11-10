@@ -34,7 +34,7 @@ Template.login.events({
     }
 });
 
-Template.night.events({
+Template.logout.events({
     'click .logout': function(event){
       event.preventDefault();
       console.log('logged out');

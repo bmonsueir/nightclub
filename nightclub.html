@@ -4,36 +4,43 @@
 
 <body>
   <div class = "text-center">
-    {{> nightclub}}
+    {{> welcome}}
   </div>
-  <div class = "text-center">
+  <div class = "container">
     {{#if currentUser}}
-    {{> night}}
+    {{> logout}}
     {{else}}
-    {{> login}}
-    {{> signup}}
+    <div class = 'row'>
+      <div class = 'col-xs-6'>
+        {{> login}}
+      </div>
+      <div class = 'col-xs-6'>
+        {{> signup}}
+      </div>
+    </div>
     {{/if}}
+  </div>
+  <div class = 'container'>
+    {{> night}}
   </div>
 
 </body>
 
 <template name="night">
-  {{#if currentUser}}
-  <button class = 'logout btn btn-danger'>logout</button>
-  {{/if}}
   {{#with bars}}
     {{#each bars}}
   <div class = 'container-fluid club'>
     <div class="row">
         <div class = 'col-xs-7'>
-          <p class = 'club-name'>{{club}} {{rating}}</p>
-        <button class = "addClub" id = {{@index}}>  <img src = '{{picture}}'/></button>
+          <p class = 'club-name'>{{club}} <img class = 'rateimg' src ='{{rating}}'/></p>
+        <button class = "addClub" id = {{@index}}>  <img class = 'clubimg' src = '{{picture}}'/></button>
         <p class = 'description'>"{{description}}"</p>
         <p class = 'address'>{{address}}, {{city}}</p>
         </div>
         <div class = 'col-xs-5'>
-        <h1>Attendees</h1>
-
+          {{#if clubber}}
+        <h2>Attendees</h2>
+          {{/if}}
         {{#each clubber}}
         <p class = 'clubber'>{{this}}</p>
         {{/each}}
@@ -44,9 +51,20 @@
     {{/with}}
 
 </template>
-<template name = "nightclub">
+<template name = "welcome">
 
   <h1>Welcome to the Night!</h1>
   <input type = "text" name = "location" placeholder = "enter city or allow to find"><button class = "btn btn-info getLocation">Find Clubs</button>
-  <h3>click on picture to add or remove yourself from attendees</h3>
+
+</template>
+<template name = 'logout'>
+  <div class = 'row'>
+    <div class = 'col-xs-4'>
+      <button class = 'logout btn btn-danger'>logout</button>
+
+    </div>
+    <div class = 'col-xs-8'>
+        <h3>click on picture to add or remove yourself from attendees</h3>
+    </div>
+  </div>
 </template>

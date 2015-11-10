@@ -22,3 +22,5 @@ twbs:bootstrap
 twitter
 accounts-ui
 accounts-password
+oauth1
+accounts-twitter

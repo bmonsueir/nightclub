@@ -6,7 +6,17 @@ h1 {
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
-	color: white;
+	color: #FFFFFF;
+  text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+}
+h2 {
+	font-family: Georgia, Times, 'Times New Roman', serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	color: #FFFFAA;
   text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
 }
 h3 {
@@ -19,18 +29,23 @@ h3 {
 	color: white;
   text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
 }
-img{
+.clubimg{
     width: 100px;
     height: 100px;
     border: 1px solid #FF0000;
 		border-radius: 10px
 }
+.rateimg{
+    width: 65px;
+    height: 20px;
+}
+
 .club{
     border-width: 1px;
     border-style: solid;
     border-radius: 20px;
     color: #000000;
-    border-color: #FF0000;
+    border-color: #FFAAAA;
     margin: 20px;
 		color: white;
   text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
@@ -53,16 +68,16 @@ img{
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
-	color: white;
+	color: #FFFFAA;
   text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
 }
 .description{
 	font-family: Georgia, Times, 'Times New Roman', serif;
-	font-size: 24px;
+	font-size: 14px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
-	line-height: 26.4px;
+	line-height: 16.4px;
 	margin: 10px;
 	color: white;
   text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
