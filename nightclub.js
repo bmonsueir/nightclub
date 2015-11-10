@@ -24,7 +24,7 @@ longitude = position.coords.longitude;
     'click .addClub': function (event) {
        var index = event.currentTarget.id;
        var user = Meteor.user();
-       console.log(bar[index].id);
+       //console.log(bar[index].id);
        if(user){
          if(bar[index].clubber){
            if(bar[index].clubber.indexOf(user.username) > -1){
@@ -65,7 +65,7 @@ longitude = position.coords.longitude;
              patrons = Clubbers.findOne({_id: result.businesses[i].id});
           }else{
             patrons.clubber = [];
-              console.log(patrons.clubber)
+            //  console.log(patrons.clubber)
           }
 
             bar.push(
@@ -100,13 +100,9 @@ if (Meteor.isServer) {
     yelpSearch: function(longitude, latitude, location) {
 
       this.unblock();
-      var auth = {
-      	oauth_consumer_key: "Bp5Xps0RBLZQyvWxmcaK8A",
-      	oauth_consumer_secret: "O2dwQNzGMwXIh3Kw6X1M-axpkHI",
-      	oauth_token: "QJTQ0VnUzUsHF90UakFy70eXgMG09w16",
-      	accessTokenSecret: "gdzSBgdskud1sqfWybLAJJ06iVY",
-      	oauth_signature_method: "HMAC-SHA1"
-      };
+
+      //place auth here
+      var auth={};
 
       var params = _.extend(auth),
       url = 'http://api.yelp.com/v2/search';
