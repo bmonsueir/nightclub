@@ -3,23 +3,13 @@
 </head>
 
 <body>
+  <div class = "container">
+  <div class = "text-center"> {{> loginButtons}}</div>
+</div>
   <div class = "text-center">
     {{> welcome}}
   </div>
-  <div class = "container">
-    {{#if currentUser}}
-    {{> logout}}
-    {{else}}
-    <div class = 'row'>
-      <div class = 'col-xs-6'>
-        {{> login}}
-      </div>
-      <div class = 'col-xs-6'>
-        {{> signup}}
-      </div>
-    </div>
-    {{/if}}
-  </div>
+
   <div class = 'container'>
     {{> night}}
   </div>
@@ -56,15 +46,4 @@
   <h1>Welcome to the Night!</h1>
   <input type = "text" name = "location" placeholder = "enter city or allow to find"><button class = "btn btn-info getLocation">Find Clubs</button>
 
-</template>
-<template name = 'logout'>
-  <div class = 'row'>
-    <div class = 'col-xs-4'>
-      <button class = 'logout btn btn-danger'>logout</button>
-
-    </div>
-    <div class = 'col-xs-8'>
-        <h3>click on picture to add or remove yourself from attendees</h3>
-    </div>
-  </div>
 </template>

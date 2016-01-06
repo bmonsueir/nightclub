@@ -49,11 +49,12 @@ longitude = position.coords.longitude;
 
   Template.welcome.events({
     'click .getLocation': function (event) {
+
       var location = $('[name=location]').val();
 
     Meteor.call('yelpSearch',latitude, longitude, location,  function(error, result){
       if(error) {
-        console.log(error)
+        console.log(error);
       }else{
           bar = [];
           var patrons = [];
@@ -87,11 +88,9 @@ longitude = position.coords.longitude;
     }
 
 });
-
-// from http://markleeis.me/blog/2013/05/22/meteor-dot-js-and-yelp-oauth-search/ and https://gist.github.com/matt-oconnell/a35569cb51d5e82b4159
-
-
-
+Accounts.ui.config({
+    passwordSignupFields: "USERNAME_ONLY"
+  });
 }
 
 if (Meteor.isServer) {
@@ -102,7 +101,14 @@ if (Meteor.isServer) {
       this.unblock();
 
       //place auth here
-      var auth={};
+      var auth = {
+      	oauth_consumer_key: "Bp5Xps0RBLZQyvWxmcaK8A",
+      	oauth_consumer_secret: "O2dwQNzGMwXIh3Kw6X1M-axpkHI",
+      	oauth_token: "QJTQ0VnUzUsHF90UakFy70eXgMG09w16",
+      	accessTokenSecret: "gdzSBgdskud1sqfWybLAJJ06iVY",
+      	oauth_signature_method: "HMAC-SHA1"
+      };
+
 
       var params = _.extend(auth),
       url = 'http://api.yelp.com/v2/search';
