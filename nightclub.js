@@ -102,11 +102,6 @@ if (Meteor.isServer) {
 
       //place auth here
       var auth = {
-      	oauth_consumer_key: "Bp5Xps0RBLZQyvWxmcaK8A",
-      	oauth_consumer_secret: "O2dwQNzGMwXIh3Kw6X1M-axpkHI",
-      	oauth_token: "QJTQ0VnUzUsHF90UakFy70eXgMG09w16",
-      	accessTokenSecret: "gdzSBgdskud1sqfWybLAJJ06iVY",
-      	oauth_signature_method: "HMAC-SHA1"
       };
 
 
